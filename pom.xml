@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>net.samsarasoftware</groupId>
@@ -218,28 +219,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-source-plugin</artifactId>
-				<version>${tycho.version}</version>
-				<executions>
-					<execution>
-						<id>attach-source</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>plugin-source</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>		
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.0</version>
@@ -251,7 +230,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>3.0.2</version>				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
 				<executions>
 					<execution>
 						<id>copy licenses</id>
@@ -262,7 +243,7 @@
 						<configuration>
 							<resources>
 								<resource>
-									<directory>${env.SAMSARASOFTWARE_WORKSPACE_DIR}/net.samsarasoftware/src/license/</directory>
+									<directory>${basedir}/../net.samsarasoftware/src/license/</directory>
 									<include>THIRD-PARTY.properties</include>
 									<filtering>true</filtering>
 								</resource>
@@ -272,13 +253,20 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>license-maven-plugin</artifactId> 
-				<version>1.12</version> <configuration> <inceptionYear>2014</inceptionYear> 
-				<organizationName>Pere Joseph Rodriguez</organizationName> <encoding>UTF-8</encoding> 
-				<licenseName>epl_v1</licenseName> </configuration> </plugin> -->
+
 		</plugins>
 
 	</build>
+
+
+	<scm>
+		<developerConnection>scm:git:git://github.com/perelengo/net.samsarasoftware.m2m.qvto.git</developerConnection>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>maven3.samsara-software.es</id>
+			<url>scpexe://maven3.samsara-software.es:22/home/samsara-software/domains/maven3.samsara-software.es/repository</url>
+		</repository>
+	</distributionManagement>
 
 </project>
