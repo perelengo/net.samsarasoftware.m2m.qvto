@@ -11,7 +11,7 @@ package net.samsarasoftware.m2m.qvto.epl;
  *
  * Contributors:
  *     Radek Dvorak - initial API and implementation
- *     Pere Joseph - Allow extension mecanism for standalone mode
+ *     Pere Joseph - Allow extension mecanism for standalone mode https://bugs.eclipse.org/bugs/show_bug.cgi?id=514167
  *******************************************************************************/
 
 

@@ -4,3 +4,5 @@
 /.flattened-pom.xml.releaseBackup
 /log.log
 /.settings/
+/.classpath
+/.project
