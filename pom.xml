@@ -215,37 +215,46 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<executions>
-					<execution>
-						<id>copy licenses</id>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<phase>generate-resources</phase>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>${basedir}/../net.samsarasoftware/src/license/</directory>
-									<include>THIRD-PARTY.properties</include>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-							<outputDirectory>src/license</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 
 	</build>
 
+	<profiles>
+		<profile>
+			<id>refresh-licenses</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>3.0.2</version>
+						<executions>
+							<execution>
+								<id>copy licenses</id>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<phase>generate-resources</phase>
+								<configuration>
+									<resources>
+										<resource>
+											<directory>${basedir}/../net.samsarasoftware/src/license/</directory>
+											<include>THIRD-PARTY.properties</include>
+											<filtering>true</filtering>
+										</resource>
+									</resources>
+									<outputDirectory>src/license</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<scm>
 		<developerConnection>scm:git:git://github.com/perelengo/net.samsarasoftware.m2m.qvto.git</developerConnection>
