@@ -9,7 +9,7 @@
 
 	<groupId>net.samsarasoftware</groupId>
 	<artifactId>net.samsarasoftware.m2m.qvto</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1-SNAPSHOT</version>
 
 	<licenses>
 		<license>
@@ -257,7 +257,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/perelengo/net.samsarasoftware.m2m.qvto.git</developerConnection>
-		<tag>net.samsarasoftware.m2m.qvto-0.2.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
